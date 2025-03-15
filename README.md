@@ -13,16 +13,16 @@
 
 Структура застосунку
 
-![Структура застосунку](ApplicationComponent.png)
+![Структура застосунку](READMESchemes/ApplicationComponent.png)
 
 Основна сторінка, сторінка користувача
 
-![Основна сторінка](MainPage.png)
+![Основна сторінка](READMESchemes/MainPage.png)
 
 Сторінка адміністратора
 
-![Сторінка адміністратора](AdminPage.png)
+![Сторінка адміністратора](READMESchemes/AdminPage.png)
 
 Сутності
 
-![Сутності](ORM-Entities.png)
+![Сутності](READMESchemes/ORM-Entities.png)
