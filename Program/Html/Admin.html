@@ -10,12 +10,8 @@
     </head>
     <body>
         <h2>Прогноз погоди</h2>
+        <button id="returnBtn">Користувач</button></td>
         <div>
-            <table>
-                <button id="returnBtn">Користувач</button>
-                <button id="alchBtn">alch</button>
-                <button id="pgBtn">pg</button>
-            </table>
             <input id="ID" type="hidden"/>
             <table>
                 <thead>
@@ -213,7 +209,6 @@
                 return tr;
             }
 
-            // надіслання форми для оновлення деня
             async function chengeDay(idI) {
                 const name = document.getElementById("NAME").value;
                 const dd = document.getElementById("DD").value;
@@ -232,7 +227,7 @@
             // скидання значень форми
             document.getElementById("resetBtn").addEventListener("click", () => reset());
 
-            // надсилання форми для додвання дня
+            // надсилання форми
             document.getElementById("saveBtn").addEventListener("click", async () => {
 
                 const id = document.getElementById("ID").value;
@@ -250,7 +245,6 @@
                 reset();
             });
 
-            // кнопка перейти на користувача
             document.getElementById("returnBtn").addEventListener("click", async () => {
 
                 const response = await fetch("/user", {
@@ -260,38 +254,6 @@
 
                 if (response.redirected) {
                     window.location.href = response.url;
-                }
-            })
-
-            // кнопка використовувати SQLite
-            document.getElementById("alchBtn").addEventListener("click", async () => {
-
-                const response = await fetch("/admin/use/alch", {
-                    method: "GET",
-                    headers: { "Accept": "application/json" }
-                });
-
-                if (response.ok) {
-                    const rows = document.querySelectorAll("tbody tr");
-                    rows.forEach(row => row.remove());
-
-                    getDays();
-                }
-            })
-
-            // кнопка використовувати PostgreSQL
-            document.getElementById("pgBtn").addEventListener("click", async () => {
-
-                const response = await fetch("/admin/use/pg", {
-                    method: "GET",
-                    headers: { "Accept": "application/json" }
-                });
-
-                if (response.ok) {
-                    const rows = document.querySelectorAll("tbody tr");
-                    rows.forEach(row => row.remove());
-
-                    getDays();
                 }
             })
 
