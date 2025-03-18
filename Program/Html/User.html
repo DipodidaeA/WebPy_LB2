@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>LAB2</title>
+        <title>LAB1</title>
         <style>
             td {padding:5px;}
             button{margin: 5px;}
@@ -11,13 +11,15 @@
     <body>
         <h2>Прогноз погоди</h2>
         <div>
+            Авторизація адміна:<br/>
             <table>
                 <thead>
-                    <tr>
-                        <th>Авторизація адміна, введіть пароль:<br /></th>
-                        <td><input id="PASSW" type="number" /></td>
-                        <td><button id="confirmBtn">Підтвердити</button></td>
-                    </tr>
+                <tr>
+                <th>Введіть пароль:<br /></th>
+                <td><input id="PASSW" type="number" /></td>
+
+                <td><button id="confirmBtn">Підтвердити</button></td>
+                </tr>
                 </thead>
             </table>
         </div>
@@ -91,7 +93,6 @@
                 return tr;
             }
 
-            // кнопка підтвердження паролю адміна
             document.getElementById("confirmBtn").addEventListener("click", async () => {
 
                 const passw = document.getElementById("PASSW").value;
@@ -101,7 +102,6 @@
                     headers: { "Accept": "application/json" }
                 });
 
-                // якщо все добре переходимо на нову сторінку
                 if (response.redirected) {
                     window.location.href = response.url;
                 }
