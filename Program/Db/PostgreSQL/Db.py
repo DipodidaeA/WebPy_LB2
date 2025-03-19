@@ -17,7 +17,8 @@ def get_conn():
 '''
 стадія 2 сворення БД
 скрипт для створення таблиць БД
-
+'''
+'''
 conn = psycopg2.connect(
     dbname="sql_wether_app_pg",
     user="postgres",
@@ -62,7 +63,8 @@ conn.close()
 '''
 стадія 1 створення БД
 скрипт для створення БД
-
+'''
+'''
 conn = psycopg2.connect(
     dbname="postgres",
     user="postgres",
